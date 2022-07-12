@@ -1,0 +1,240 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Deedy - One Page Two Column Resume
+% LaTeX Template
+% Version 1.2 (16/9/2014)
+%
+% Original author:
+% Debarghya Das (http://debarghyadas.com)
+%
+% Original repository:
+% https://github.com/deedydas/Deedy-Resume
+%
+% IMPORTANT: THIS TEMPLATE NEEDS TO BE COMPILED WITH XeLaTeX
+%
+% This template uses several fonts not included with Windows/Linux by
+% default. If you get compilation errors saying a font is missing, find the line
+% on which the font is used and either change it to a font included with your
+% operating system or comment the line out to use the default font.
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% TODO:
+% 1. Integrate biber/bibtex for article citation under publications.
+% 2. Figure out a smoother way for the document to flow onto the next page.
+% 3. Add styling information for a "Projects/Hacks" section.
+% 4. Add location/address information
+% 5. Merge OpenFont and MacFonts as a single sty with options.
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% CHANGELOG:
+% v1.1:
+% 1. Fixed several compilation bugs with \renewcommand
+% 2. Got Open-source fonts (Windows/Linux support)
+% 3. Added Last Updated
+% 4. Move Title styling into .sty
+% 5. Commented .sty file.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Known Issues:
+% 1. Overflows onto second page if any column's contents are more than the
+% vertical limit
+% 2. Hacky space on the first bullet point on the second column.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[]{deedy-resume-openfont}
+\usepackage{fancyhdr}
+ 
+\pagestyle{fancy}
+\fancyhf{}
+ 
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     LAST UPDATED DATE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \lastupdated
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     TITLE NAME
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\namesection{}{ Vu Long }{ \urlstyle{same}\href{https://vulong.dev}{vulong.dev} | \href{mailto:vulong1602@gmail.com}{vulong1602@gmail.com} | (+65) 88907162}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     COLUMN ONE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{minipage}[t]{0.3\textwidth} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     EDUCATION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Education} 
+
+\subsection{Bach Khoa University}
+\descript{Bachelor of Engineering }
+\location{Control Engineering and Automation}
+\location{HCMC  - Vietnam}
+\location{Sep 2013 - Apr 2018}
+\location{Major GPA: 8.64 / 10.0}
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     LINKS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Links} 
+Github:// \href{https://github.com/lovung}{\bf lovung} \\
+LinkedIn://  \href{https://www.linkedin.com/in/vu-long/}{\bf vu-long} \\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     SKILLS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Skills}
+\subsection{Programming}
+\location{Fluent:}
+Golang \textbullet{} C \textbullet{} Dart \textbullet{} Shell \\
+\location{Good at:}
+Python \textbullet{} JS \textbullet{} Vim \\
+\sectionsep
+\subsection{Tools}
+git \textbullet{}  Docker \textbullet{} Grafana
+\sectionsep
+\subsection{DB and Persistences}
+MySQL \textbullet{}  Redis \textbullet{} Kafka
+\sectionsep
+\subsection{DevOps}
+Gitlab CI \textbullet{} Github Action \textbullet{} \\
+Kubernetes \textbullet{} CNCF projects
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     SKILLS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Projects}
+\textbullet{} \href{https://github.com/lovung/GoCleanArchitecture}{\bf Golang clean architecture template } \\
+\textbullet{} \href{https://github.com/lovung/date}{\bf Date library} \\
+\textbullet{} \href{https://github.com/lovung/decimal}{\bf Decimal library} \\
+\textbullet{} \href{https://github.com/lovung/challenges}{\bf Challenges} \\
+\textbullet{} \href{https://github.com/lovung/simplify-debts-demo}{\bf Simplify debts} \\
+\textbullet{} \href{https://github.com/lovung/memcache}{\bf Memcache} \\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     COLUMN TWO
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{minipage} 
+\hfill
+\begin{minipage}[t]{0.69\textwidth} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     EXPERIENCE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Experience}
+\runsubsection{Shopee}
+\descript{| Software Engineer }
+\location{Jun 2021 - Present | Singapore}
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
+\begin{tightemize}
+\item Migrating more than 10 APIs from Python to Golang also improving the code structure with design pattern, improving the performance to handle 500k+ QPS during Campaign.
+\item Applied unified caching, saving 3 millions QPS to call lower layers. Implementing the flexible rate limiter to block 20k+ spam QPS. Applied flexible i18n loading to reduce re-deployments.
+\item Developing the marketplace features to adapt user behaviors like: Component list, Payment cards, Promotion event sync, etc.
+\end{tightemize}
+\sectionsep
+
+\runsubsection{Money Forward Vietnam}
+\descript{| Senior Backend Engineer }
+\location{Jul 2020 – May 2021 | HCMC, Vietnam}
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
+\begin{tightemize}
+\item Built the Golang Backend Code structure from scratch with Clean architecture, linter, unit test, and integration test. Defined the git workflow standard, set up CI/CD workflow. 
+\item Applied the Bi-temporal models for Asset Accounting SaaS system. Finished 3 phases of product with Deprecation as main feature.
+\item Reviewed CVs. Reviewed the coding challenges. Interviewed the candidates.
+\end{tightemize}
+\sectionsep
+
+\runsubsection{VinID / OneID}
+\descript{| Senior Software Engineer then Engineer Manager }
+\location{Feb 2019 – Jul 2020 | HCMC, Vietnam}
+\begin{tightemize}
+\item Built from scratch the backend services by Golang for Merchant Platform (support Merchant Site, Merchant App, OPS Site, Integration Service, Notification Service, etc.).
+\item Built from scratch Merchant App with Flutter Framework. This App was working well with multiple modules and multiple teams and has about 30K monthly active users.
+\item Defined the git workflow standard, set up CI/CD workflow (for both App and Backend) to work smoothly and fast. It's referred to use by many other teams.
+\item Interviewed the new Flutter engineers and led Flutter engineers. 
+\end{tightemize}
+\sectionsep
+
+\runsubsection{ZALO - VNG}
+\descript{| Software Engineer }
+\location{May 2018 – Feb 2019 | HCMC, Vietnam}
+\begin{tightemize}
+\item Developed the kernel module to capture/monitor networking of the server (like Kubernetes) using C Language.
+\item Modified OpenSSH service from server-side to track the developer activities via SSH.
+\end{tightemize}
+\sectionsep
+
+\runsubsection{Hubble Connected}
+\descript{| Firmware Engineer }
+\location{Mar 2017 – May 2018 | HCMC, Vietnam}
+\begin{tightemize}
+\item Developed and maintained streaming audio (10k+ sold products), smart home devices (5k+ sold products) in the IoT team.
+\end{tightemize}
+\sectionsep
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %     RESEARCH
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \section{Projects}
+% \runsubsection{Cornell Robot Learning Lab}
+% \descript{| Researcher}
+% \location{Jan 2014 – Jan 2015 | Ithaca, NY}
+% Worked with \textbf{\href{http://www.cs.cornell.edu/~ashesh/}{Ashesh Jain}} and \textbf{\href{http://www.cs.cornell.edu/~asaxena/}{Prof Ashutosh Saxena}} to create \textbf{PlanIt}, a tool which  learns from large scale user preference feedback to plan robot trajectories in human environments.  
+% \sectionsep
+
+% \runsubsection{Cornell Phonetics Lab}
+% \descript{| Head Undergraduate Researcher}
+% \location{Mar 2012 – May 2013 | Ithaca, NY}
+% Led the development of \textbf{QuickTongue}, the first ever breakthrough tongue-controlled game with \textbf{\href{http://conf.ling.cornell.edu/~tilsen/}{Prof Sam Tilsen}} to aid in Linguistics research. 
+% \sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     AWARDS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Awards} 
+\begin{tabular}{rll}
+Aug 2020	     &  Monthly Hero Award & Golang course team in MFV \\
+Dec 2019	     & Good Engineer in Year  & VinID/OneID \\
+Dec 2018	     & Top 15 - ZAChallenge  & Zalo - VNG\\
+Dec 2018         & Top 5 Employee of Year & Hubble Connected \\
+\end{tabular}
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     PUBLICATIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \section{Publications} 
+% \renewcommand\refname{\vskip -1.5em} % Couldn't get this working from the .cls file
+% \bibliographystyle{abbrv}
+% \bibliography{publications}
+% \nocite{*}
+
+\end{minipage} 
+\end{document}  \documentclass[]{article}
